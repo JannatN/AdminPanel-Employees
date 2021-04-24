@@ -1,4 +1,4 @@
-package com.javatechie.crud.example.entity;
+package edu.beth.adminPanel.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

@@ -1,7 +1,8 @@
-package com.javatechie.crud.example.service;
+package edu.beth.adminPanel.service;
 
-import com.javatechie.crud.example.entity.Employees;
-import com.javatechie.crud.example.repository.EmployeeRepository;
+import edu.beth.adminPanel.entity.Employees;
+import edu.beth.adminPanel.repository.EmployeeRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,7 +1,8 @@
-package com.javatechie.crud.example.controller;
+package edu.beth.adminPanel.controller;
 
-import com.javatechie.crud.example.entity.Employees;
-import com.javatechie.crud.example.service.EmployeeService;
+import edu.beth.adminPanel.entity.Employees;
+import edu.beth.adminPanel.service.EmployeeService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
