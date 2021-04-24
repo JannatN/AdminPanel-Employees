@@ -2,7 +2,9 @@ package com.javatechie.crud.example.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.sql.Date;
 
@@ -16,6 +18,8 @@ import javax.persistence.Table;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@Getter
+@Setter
 @Table(name = "employees")
 public class Employees {
 
@@ -26,7 +30,6 @@ public class Employees {
 	private String gender;
 	private Date hire_date;
 	private Date birth_date;
-	
 
 	public int getEmp_no() {
 		return emp_no;
