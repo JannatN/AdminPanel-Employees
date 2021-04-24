@@ -1,7 +1,7 @@
 package edu.beth.adminPanel.controller;
 
-import edu.beth.adminPanel.entity.Employees;
-import edu.beth.adminPanel.service.EmployeeService;
+import edu.beth.adminPanel.entity.Departments;
+import edu.beth.adminPanel.service.DepartmentService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -12,11 +12,11 @@ import java.util.List;
 public class EmployeeController {
 
     @Autowired
-    private EmployeeService service;
+    private DepartmentService service;
 
-    @PostMapping("/addEmployee")
-    public Employees addEmployee(@RequestBody Employees employee) {
-        return service.saveEmployee(employee);
+    @PostMapping("/addDepartment")
+    public Departments addDepartment(@RequestBody Departments Department) {
+        return service.saveDepartment(Department);
     }
 
 //    @PostMapping("/addProducts")
@@ -24,9 +24,9 @@ public class EmployeeController {
 //        return service.saveProducts(products);
 //    }
 
-    @GetMapping("/employees")
-    public List<Employees> findAllEmployees() {
-        return service.getEmployee();
+    @GetMapping("/Departments")
+    public List<Departments> findAllDepartments() {
+        return service.getDepartments();
     }
 
 //    @GetMapping("/productById/{id}")
@@ -34,11 +34,11 @@ public class EmployeeController {
 //        return service.getProductById(id);
 //    }
 //
-//    @GetMapping("/product/{name}")
-//    public Product findProductByName(@PathVariable String name) {
-//        return service.getProductByName(name);
-//    }
-//
+    @GetMapping("/product/{name}")
+    public Departments findProductByName(@PathVariable String name) {
+        return service.getPrByName(name);
+    }
+
 ////    @PutMapping("/update")
 ////    public Product updateProduct(@RequestBody Product product) {
 ////        return service.updateProduct(product);

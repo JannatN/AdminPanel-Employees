@@ -1,7 +1,7 @@
 package edu.beth.adminPanel.service;
 
-import edu.beth.adminPanel.entity.Employees;
-import edu.beth.adminPanel.repository.EmployeeRepository;
+import edu.beth.adminPanel.entity.Departments;
+import edu.beth.adminPanel.repository.DepartmentRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -9,19 +9,19 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class EmployeeService {
+public class DepartmentService {
 	@Autowired
-	private EmployeeRepository repository;
+	private DepartmentRepository repository;
 
-	public Employees saveEmployee(Employees employee) {
-		return repository.save(employee);
+	public Departments saveDepartment(Departments Department) {
+		return repository.save(Department);
 	}
 
 //    public List<Employee> saveProducts(List<Employee> emp) {
 //        return repository.saveAll(emp);
 //    }
 
-	public List<Employees> getEmployee() {
+	public List<Departments> getDepartments() {
 		return repository.findAll();
 	}
 
@@ -32,7 +32,7 @@ public class EmployeeService {
 //    public Product getProductByName(String name) {
 //        return repository.findByName(name);
 //    }
-//
+
 //    public String deleteProduct(int id) {
 //        repository.deleteById(id);
 //        return "product removed !! " + id;
