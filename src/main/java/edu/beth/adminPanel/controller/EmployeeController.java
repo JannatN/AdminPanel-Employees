@@ -4,8 +4,6 @@ import edu.beth.adminPanel.entity.Employees;
 import edu.beth.adminPanel.service.EmployeeService;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.query.Param;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -30,15 +28,6 @@ public class EmployeeController {
     public List<Employees> findAllEmployees() {
         return service.getEmployee();
     }
-    
-//    @RequestMapping("/")
-//    public String viewHomePage(Model model, @Param("keyword") String keyword) {
-//        List<Employees> listProducts = service.listAll(keyword);
-//        model.addAttribute("listProducts", listProducts);
-//        model.addAttribute("keyword", keyword);
-//         
-//        return "index";
-//    }
 
 //    @GetMapping("/productById/{id}")
 //    public Product findProductById(@PathVariable int id) {

@@ -20,15 +20,6 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "employees")
 public class Employees {
-
-	public Employees(int emp_no, String first_name) {
-		super();
-		this.emp_no = emp_no;
-		this.first_name = first_name;
-		
-	
-	}
-
 	@Id
 	private int emp_no;
 	private String first_name;
