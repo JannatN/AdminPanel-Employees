@@ -8,8 +8,10 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import edu.beth.adminPanel.entity.Employees;
 
 public interface EmployeeRepository extends JpaRepository<Employees, Integer> {
-//	@Query("SELECT p FROM Product p WHERE CONCAT(p.name, p.brand, p.madein, p.price) LIKE %?1%")
-//	@Query("SELECT p FROM Product p WHERE CONCAT(p.name, ' ', p.brand, ' ', p.madein, ' ', p.price) LIKE %?1%")
-//	@Query("SELECT emp FROM employees emp WHERE emp.first_name LIKE %?1%" + " OR emp.last_name LIKE %?1%")
+//	@Query("SELECT d  FROM employees d WHERE d.gender LIKE %?1%")
+////	@Query("SELECT d FROM Departments d WHERE CONCAT(d.dept_no, ' ', d.dept_name) LIKE %?1%")
+//	
+//	
+//	
 //	public List<Employees> search(String keyword);
 }

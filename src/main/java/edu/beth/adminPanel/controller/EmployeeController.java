@@ -1,8 +1,8 @@
 package edu.beth.adminPanel.controller;
 
+import edu.beth.adminPanel.entity.Departments;
 import edu.beth.adminPanel.entity.Employees;
 import edu.beth.adminPanel.service.EmployeeService;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,23 +11,28 @@ import java.util.List;
 @RestController
 public class EmployeeController {
 
-    @Autowired
-    private EmployeeService service;
+	@Autowired
+	private EmployeeService service;
 
-    @PostMapping("/addEmployee")
-    public Employees addEmployee(@RequestBody Employees employee) {
-        return service.saveEmployee(employee);
-    }
+	@PostMapping("/addEmployee")
+	public Employees addEmployee(@RequestBody Employees employee) {
+		return service.saveEmployee(employee);
+	}
 
 //    @PostMapping("/addProducts")
 //    public List<Product> addProducts(@RequestBody List<Product> products) {
 //        return service.saveProducts(products);
 //    }
 
-    @GetMapping("/employees")
-    public List<Employees> findAllEmployees() {
-        return service.getEmployee();
-    }
+	@GetMapping("/employees")
+	public List<Employees> findAllEmployees() {
+		return service.getEmployee();
+	}
+
+//	@GetMapping("/searchDept/{id}")
+//	public List<Employees> findDeptById(@PathVariable String id) {
+//		return service.listAll(id);
+//	}
 
 //    @GetMapping("/productById/{id}")
 //    public Product findProductById(@PathVariable int id) {

@@ -18,8 +18,6 @@ import javax.persistence.Table;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Getter
-@Setter
 @Table(name = "departments")
 public class Departments{
 

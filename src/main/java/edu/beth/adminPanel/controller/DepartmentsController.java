@@ -21,18 +21,13 @@ public class DepartmentsController {
 		return service.saveDepartment(Department);
 	}
 
-//    @PostMapping("/addProducts")
-//    public List<Product> addProducts(@RequestBody List<Product> products) {
-//        return service.saveProducts(products);
-//    }
-
 	@GetMapping("/Departments")
 	public List<Departments> findAllDepartments() {
 		return service.getDepartments();
 	}
 
 	@GetMapping("/searchDept/{id}")
-	public List<Departments> findProductById(@PathVariable String id) {
+	public List<Departments> findDeptById(@PathVariable String id) {
 		return service.listAll(id);
 	}
 
