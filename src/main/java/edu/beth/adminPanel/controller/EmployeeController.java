@@ -22,6 +22,13 @@ public class EmployeeController {
 	public Employees addEmployee(@RequestBody Employees employee) {
 		return service.saveEmployee(employee);
 	}
+	
+	@GetMapping("/employees")
+	public String employees(Model model) {
+		model.addAttribute("employees", service.getEmployee());
+
+		return "employees";
+	}
 
 //	@GetMapping("/employees")
 //	public List<Employees> findAllEmployees() {
