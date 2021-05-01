@@ -6,12 +6,13 @@ import edu.beth.adminPanel.entity.User;
 import edu.beth.adminPanel.repository.EmployeeRepository;
 import edu.beth.adminPanel.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
+@Controller
 public class EmployeeController {
 	@Autowired
 
@@ -26,7 +27,7 @@ public class EmployeeController {
 	public String employees(Model model) {
 		model.addAttribute("employees", service.getEmployee());
 
-		return "employees.html";
+		return "employees";
 	}
 
 //	@GetMapping("/employees")
