@@ -47,12 +47,12 @@ public class AppController {
 		return "register_success";
 	}
 
-	@GetMapping("departments")
-	public String departments(Model model) {
-		model.addAttribute("departments", service.getDepartments());
-
-		return "departments";
-	}
+//	@GetMapping("departments")
+//	public String departments(Model model) {
+//		model.addAttribute("departments", service.getDepartments());
+//
+//		return "departments";
+//	}
 
 	@GetMapping("/users")
 	public String listUsers(Model model) {

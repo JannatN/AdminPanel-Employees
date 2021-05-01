@@ -28,6 +28,12 @@ public class DepartmentsController {
 //	}
 	
 
+	@GetMapping("/departments")
+	public String departments(Model model) {
+		model.addAttribute("departments", service.getDepartments());
+
+		return "departments";
+	}
 	@GetMapping("/searchDept/{id}")
 	public List<Departments> findDeptById(@PathVariable String id) {
 		return service.listAll(id);
