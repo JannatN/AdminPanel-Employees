@@ -2,15 +2,19 @@ package edu.beth.adminPanel.controller;
 
 import edu.beth.adminPanel.entity.Departments;
 import edu.beth.adminPanel.entity.Employees;
+import edu.beth.adminPanel.entity.User;
+import edu.beth.adminPanel.repository.EmployeeRepository;
 import edu.beth.adminPanel.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 public class EmployeeController {
-
+	@Autowired
+	private EmployeeRepository repo;
 	@Autowired
 	private EmployeeService service;
 
@@ -19,14 +23,17 @@ public class EmployeeController {
 		return service.saveEmployee(employee);
 	}
 
-//    @PostMapping("/addProducts")
-//    public List<Product> addProducts(@RequestBody List<Product> products) {
-//        return service.saveProducts(products);
-//    }
+//	@GetMapping("/employees")
+//	public List<Employees> findAllEmployees() {
+//		return service.getEmployee();
+//	}
 
 	@GetMapping("/employees")
-	public List<Employees> findAllEmployees() {
-		return service.getEmployee();
+	public String listEmps(Model model) {
+		List<Employees> listEmps = repo.findAll();
+		model.addAttribute("listEmps", listEmps);
+
+		return "employees";
 	}
 
 //	@GetMapping("/searchDept/{id}")

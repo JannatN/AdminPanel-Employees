@@ -6,6 +6,7 @@ import org.springframework.data.jdbc.repository.query.Query;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import edu.beth.adminPanel.entity.Employees;
+import edu.beth.adminPanel.entity.User;
 
 public interface EmployeeRepository extends JpaRepository<Employees, Integer> {
 //	@Query("SELECT d  FROM employees d WHERE d.gender LIKE %?1%")
@@ -14,4 +15,5 @@ public interface EmployeeRepository extends JpaRepository<Employees, Integer> {
 //	
 //	
 //	public List<Employees> search(String keyword);
+
 }
