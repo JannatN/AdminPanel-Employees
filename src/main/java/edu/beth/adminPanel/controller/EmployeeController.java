@@ -14,8 +14,7 @@ import java.util.List;
 @RestController
 public class EmployeeController {
 	@Autowired
-	private EmployeeRepository repo;
-	@Autowired
+
 	private EmployeeService service;
 
 	@PostMapping("/addEmployee")
@@ -27,15 +26,12 @@ public class EmployeeController {
 //	public List<Employees> findAllEmployees() {
 //		return service.getEmployee();
 //	}
-
-	@GetMapping("/employees")
-	public String listEmps(Model model) {
-		List<Employees> listEmps = repo.findAll();
-		model.addAttribute("listEmps", listEmps);
-
-		return "employees";
-	}
-
+//	@GetMapping("/employees")
+//	public String listemps(Model model) {
+//		model.addAttribute("listEmps", service.getEmployee());
+//
+//		return "employees.html";
+//	}
 //	@GetMapping("/searchDept/{id}")
 //	public List<Employees> findDeptById(@PathVariable String id) {
 //		return service.listAll(id);
