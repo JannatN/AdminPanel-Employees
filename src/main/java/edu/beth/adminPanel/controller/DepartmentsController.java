@@ -36,6 +36,7 @@ public class DepartmentsController {
 		model.addAttribute("department", department);
 		return "new_department";
 	}
+
 	@PostMapping("/saveDepartment")
 	public String saveDepartment(@ModelAttribute("department") Departments department) {
 		// save employee to database
