@@ -26,8 +26,7 @@
 					<td th:text="${departments.dept_no}">Department Num</td>
 					<td th:text="${departments.dept_name}">Department Name</td>
 					<td> <a th:href="@{/showFormForUpdate/{dept_no}(dept_no=${departments.dept_no})}" class="btn btn-primary">Update</a>
-					  <a th:href="@{/deleteEmployee/{dept_no}(dept_no=${departments.dept_no})}" class="btn btn-danger">Delete</a>
-					</td>
+
 				</tr>
 			</tbody>
 		</table>

@@ -48,5 +48,22 @@ public class DepartmentsController {
 	public List<Departments> findDeptById(@PathVariable String id) {
 		return service.listAll(id);
 	}
-
+//	@GetMapping("/showFormForUpdate/{id}")
+//	public String showFormForUpdate(@PathVariable ( value = "dept_no") String id, Model model) {
+//		
+//		// get employee from the service
+//		Departments department = service.getDepartmentById(id);
+//		
+//		// set employee as a model attribute to pre-populate the form
+//		model.addAttribute("department", department);
+//		return "update_department";
+//	}
+	
+	@GetMapping("/deleteEmployee/{dept_no}")
+	public String deleteEmployee(@PathVariable (value = "dept_no") String dept_no) {
+		
+		// call delete employee method 
+		this.service.deleteDepartmentById(dept_no);
+		return "redirect:/departments";
+	}
 }
