@@ -29,16 +29,16 @@ public class DepartmentService {
 		return repository.findAll();
 	}
 
-//	public Departments getDepartmentById(String id) {
-//		Optional<Departments> optional = repository.findById(id);
-//		Departments department = null;
-//		if (optional.isPresent()) {
-//			department = optional.get();
-//		} else {
-//			throw new RuntimeException(" Department not found for dept_no :: " + id);
-//		}
-//		return department;
-//	}
+	public Departments getDepartmentById(String dept_no) {
+		Optional<Departments> optional = repository.findById(dept_no);
+		Departments department = null;
+		if (optional.isPresent()) {
+			department = optional.get();
+		} else {
+			throw new RuntimeException(" Department not found for dept_no :: " + dept_no);
+		}
+		return department;
+	}
 
 	public void deleteDepartmentById(String id) {
 		this.repository.deleteById(id);
