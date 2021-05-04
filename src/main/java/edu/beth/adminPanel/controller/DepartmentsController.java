@@ -17,15 +17,6 @@ public class DepartmentsController {
 	@Autowired
 	private DepartmentService service;
 
-	@RequestMapping("/searchDept")
-	public String searchDepartment(Model model, @Param("keyword") String keyword) {
-		List<Departments> listOfDepts = service.listAll(keyword);
-		model.addAttribute("departments", listOfDepts);
-		model.addAttribute("keyword", keyword);
-
-		return "departments";
-	}
-
 	@PostMapping("/addDepartment")
 	public Departments addDepartment(@RequestBody Departments Department) {
 		return service.saveDepartment(Department);
@@ -40,7 +31,6 @@ public class DepartmentsController {
 
 	@GetMapping("/showNewDeptForm")
 	public String showNewDeptForm(Model model) {
-		// create model attribute to bind form data
 		Departments department = new Departments();
 		model.addAttribute("department", department);
 		return "new_department";
@@ -48,7 +38,6 @@ public class DepartmentsController {
 
 	@PostMapping("/saveDepartment")
 	public String saveDepartment(@ModelAttribute("department") Departments department) {
-		// save employee to database
 		service.saveDepartment(department);
 		return "redirect:/departments";
 	}
@@ -60,20 +49,26 @@ public class DepartmentsController {
 
 	@GetMapping("/showFormForUpdate/{dept_no}")
 	public String showFormForUpdate(@PathVariable(value = "dept_no") String dept_no, Model model) {
-
-		// get employee from the service
 		Departments department = service.getDepartmentById(dept_no);
-
-		// set employee as a model attribute to pre-populate the form
 		model.addAttribute("department", department);
 		return "update_department";
 	}
 
-	@GetMapping("/deleteEmployee/{dept_no}")
-	public String deleteEmployee(@PathVariable(value = "dept_no") String dept_no) {
+	@GetMapping("/deleteDepartment/{dept_no}")
+	public String deleteDepartment(@PathVariable(value = "dept_no") String dept_no) {
 
 		// call delete employee method
 		this.service.deleteDepartmentById(dept_no);
 		return "redirect:/departments";
 	}
+
+	@RequestMapping("/searchDept")
+	public String searchDepartment(Model model, @Param("keyword") String keyword) {
+		List<Departments> listOfDepts = service.listAll(keyword);
+		model.addAttribute("departments", listOfDepts);
+		model.addAttribute("keyword", keyword);
+
+		return "departments";
+	}
+
 }
