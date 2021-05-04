@@ -17,6 +17,15 @@ public class DepartmentsController {
 	@Autowired
 	private DepartmentService service;
 
+	@RequestMapping("/searchDept")
+	public String viewHomePage(Model model, @Param("keyword") String keyword) {
+		List<Departments> listProducts = service.listAll(keyword);
+		model.addAttribute("departments", listProducts);
+		model.addAttribute("keyword", keyword);
+
+		return "departments";
+	}
+
 	@PostMapping("/addDepartment")
 	public Departments addDepartment(@RequestBody Departments Department) {
 		return service.saveDepartment(Department);
@@ -50,20 +59,20 @@ public class DepartmentsController {
 	}
 
 	@GetMapping("/showFormForUpdate/{dept_no}")
-	public String showFormForUpdate(@PathVariable ( value = "dept_no") String dept_no, Model model) {
-		
+	public String showFormForUpdate(@PathVariable(value = "dept_no") String dept_no, Model model) {
+
 		// get employee from the service
 		Departments department = service.getDepartmentById(dept_no);
-		
+
 		// set employee as a model attribute to pre-populate the form
 		model.addAttribute("department", department);
 		return "update_department";
 	}
-	
+
 	@GetMapping("/deleteEmployee/{dept_no}")
-	public String deleteEmployee(@PathVariable (value = "dept_no") String dept_no) {
-		
-		// call delete employee method 
+	public String deleteEmployee(@PathVariable(value = "dept_no") String dept_no) {
+
+		// call delete employee method
 		this.service.deleteDepartmentById(dept_no);
 		return "redirect:/departments";
 	}
