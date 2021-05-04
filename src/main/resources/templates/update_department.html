@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Welcome to CodeJava Home</title>
+	<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+	<script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="container">
+		<h1>Department Management System</h1>
+		<hr>
+		<h2>Update Department</h2>
+
+			<form action="#" th:action="@{/saveDepartment}" th:object="${department}"
+			method="POST">
+				
+			<input type="text" th:field="*{dept_no}"
+				placeholder="Department Number " class="form-control mb-4 col-4">
+				
+				<input type="text" th:field="*{dept_name}"
+				placeholder="Department Name" class="form-control mb-4 col-4">
+				
+				
+				<button type="submit" class="btn btn-info col-2"> Update Department</button>
+		</form>
+		
+		<hr>
+		
+		<a th:href = "@{/departments}"> Back to Department List</a>
+	</div>
+</body>
+</html>

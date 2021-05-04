@@ -21,8 +21,6 @@ public class AppController {
 	@Autowired
 	private UserRepository userRepo;
 
-	@Autowired
-	private DepartmentService service;
 
 	@GetMapping("")
 	public String viewHomePage() {

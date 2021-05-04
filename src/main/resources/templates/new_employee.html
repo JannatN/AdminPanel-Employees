@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Welcome to CodeJava Home</title>
+	<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+	<script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="container">
+		<h1>Employee Management System</h1>
+		<hr>
+		<h2>Save Employee</h2>
+
+		<form action="#" th:action="@{/saveEmployee}" th:object="${employee}"
+			method="POST">
+			<input type="number" th:field="*{emp_no}"
+				placeholder="Employee Number " class="form-control mb-4 col-4">
+				
+				<input type="date" th:field="*{birth_date}"
+				placeholder="Employee birth date" class="form-control mb-4 col-4">
+                                 
+                                
+				<input type="text" th:field="*{first_name}"
+				placeholder="Employee first name" class="form-control mb-4 col-4">
+                                 
+                                
+				<input type="text" th:field="*{last_name}"
+				placeholder="Employee last name" class="form-control mb-4 col-4">
+
+                                <input type="text" th:field="*{gender}"
+				placeholder="Employee gender" class="form-control mb-4 col-4">
+                                 
+                                
+				<input type="date" th:field="*{hire_date}"
+				placeholder="Employee hire date" class="form-control mb-4 col-4">
+				
+				
+				<button type="submit" class="btn btn-info col-2"> Save Employee</button>
+		</form>
+</body>
+</html>

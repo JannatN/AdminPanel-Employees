@@ -31,14 +31,13 @@ public class DepartmentsController {
 
 	@GetMapping("/showNewDeptForm")
 	public String showNewDeptForm(Model model) {
-		// create model attribute to bind form data
 		Departments department = new Departments();
 		model.addAttribute("department", department);
 		return "new_department";
 	}
+
 	@PostMapping("/saveDepartment")
 	public String saveDepartment(@ModelAttribute("department") Departments department) {
-		// save employee to database
 		service.saveDepartment(department);
 		return "redirect:/departments";
 	}
@@ -46,6 +45,30 @@ public class DepartmentsController {
 	@GetMapping("/searchDept/{id}")
 	public List<Departments> findDeptById(@PathVariable String id) {
 		return service.listAll(id);
+	}
+
+	@GetMapping("/showFormForUpdate/{dept_no}")
+	public String showFormForUpdate(@PathVariable(value = "dept_no") String dept_no, Model model) {
+		Departments department = service.getDepartmentById(dept_no);
+		model.addAttribute("department", department);
+		return "update_department";
+	}
+
+	@GetMapping("/deleteDepartment/{dept_no}")
+	public String deleteDepartment(@PathVariable(value = "dept_no") String dept_no) {
+
+		// call delete employee method
+		this.service.deleteDepartmentById(dept_no);
+		return "redirect:/departments";
+	}
+
+	@RequestMapping("/searchDept")
+	public String searchDepartment(Model model, @Param("keyword") String keyword) {
+		List<Departments> listOfDepts = service.listAll(keyword);
+		model.addAttribute("departments", listOfDepts);
+		model.addAttribute("keyword", keyword);
+
+		return "departments";
 	}
 
 }
