@@ -18,9 +18,9 @@ public class DepartmentsController {
 	private DepartmentService service;
 
 	@RequestMapping("/searchDept")
-	public String viewHomePage(Model model, @Param("keyword") String keyword) {
-		List<Departments> listProducts = service.listAll(keyword);
-		model.addAttribute("departments", listProducts);
+	public String searchDepartment(Model model, @Param("keyword") String keyword) {
+		List<Departments> listOfDepts = service.listAll(keyword);
+		model.addAttribute("departments", listOfDepts);
 		model.addAttribute("keyword", keyword);
 
 		return "departments";

@@ -8,6 +8,17 @@
 	<script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 </head>
 <body>
+
+	<br/><br/>
+	<form th:action="@{/searchEmp}">
+		Filter: <input type="text" name="keyword" id="keyword" size="50" th:value="${keyword}" required />
+		&nbsp;
+		<input type="submit" value="Search" />
+		&nbsp;
+		<input type="button" value="Clear" id="btnClear" onclick="clearSearch()" />
+	</form>
+	<br/><br/>
+
        <div><a th:href = "@{/showNewEmpForm}" class="btn btn-primary btn-sm mb-3">  Add Employee</a> <div>
 			<h3> List Of Employees<h3>
 	<div>
@@ -37,5 +48,10 @@
 	</div>
 
 </form>
+<script type="text/javascript">
+	function clearSearch() {
+		window.location = "[[@{/employees}]]";
+	}
+</script>
 </body>
 </html>
