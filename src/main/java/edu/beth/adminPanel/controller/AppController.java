@@ -23,8 +23,6 @@ public class AppController {
 	@Autowired
 	private UserRepository userRepo;
 
-	@Autowired
-	private DepartmentService service;
 
 	@GetMapping("")
 	public String viewHomePage() {
@@ -49,6 +47,7 @@ public class AppController {
 		return "register_success";
 	}
 
+<<<<<<< HEAD
 
 //	@GetMapping("departments")
 //	public String departments(Model model) {
@@ -58,6 +57,8 @@ public class AppController {
 //	}
 	
 
+=======
+>>>>>>> 32b7cd6fdc4059dd91820783d695f7edeab8f093
 
 	@GetMapping("/users")
 	public String listUsers(Model model) {

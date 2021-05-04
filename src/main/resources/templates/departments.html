@@ -9,6 +9,7 @@
 	<script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 </head>
 <body>
+<<<<<<< HEAD
          
 
          <form th:action="@{/DepartmentSearch}">
@@ -18,6 +19,19 @@
           &nbsp;
          <input type="button" value="Clear" id="btnClear" onclick="clearSearch()" />
         </form>
+=======
+	<br/><br/>
+	<form th:action="@{/searchDept}">
+		Filter: <input type="text" name="keyword" id="keyword" size="50" th:value="${keyword}" required />
+		&nbsp;
+		<input type="submit" value="Search" />
+		&nbsp;
+		<input type="button" value="Clear" id="btnClear" onclick="clearSearch()" />
+	</form>
+	<br/><br/>
+
+
+>>>>>>> 32b7cd6fdc4059dd91820783d695f7edeab8f093
 	<div><a th:href = "@{/showNewDeptForm}" class="btn btn-primary btn-sm mb-3">  Add Department </a> <div>
 			<h3> List Of Departments<h3>
 	<div>
@@ -26,6 +40,7 @@
 				<tr>
 					<th>Department Number</th>
 					<th>Department Name</th>
+					<th>Actions</th>
 					
 				</tr>
 			</thead>
@@ -33,11 +48,20 @@
 				<tr th:each="departments: ${departments}">
 					<td th:text="${departments.dept_no}">Department Num</td>
 					<td th:text="${departments.dept_name}">Department Name</td>
+					<td> <a th:href="@{/showFormForUpdate/{dept_no}(dept_no=${departments.dept_no})}" class="btn btn-primary">Update</a>
+					  <a th:href="@{/deleteEmployee/{dept_no}(dept_no=${departments.dept_no})}" class="btn btn-danger">Delete</a>
+					</td>
 				</tr>
 			</tbody>
 		</table>
 	</div>
 
 </form>
+<script type="text/javascript">
+	function clearSearch() {
+		window.location = "[[@{/departments}]]";
+	}
+</script>
+
 </body>
 </html>

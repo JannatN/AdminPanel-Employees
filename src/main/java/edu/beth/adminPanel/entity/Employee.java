@@ -19,7 +19,7 @@ import javax.persistence.Table;
 @NoArgsConstructor
 @Entity
 @Table(name = "employees")
-public class Employees {
+public class Employee {
 	@Id
 	private int emp_no;
 	private String first_name;

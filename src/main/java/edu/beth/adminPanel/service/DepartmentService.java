@@ -7,6 +7,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class DepartmentService {
@@ -27,8 +28,26 @@ public class DepartmentService {
 		}
 		return repository.findAll();
 	}
+<<<<<<< HEAD
   
 	
 	
+=======
+
+	public Departments getDepartmentById(String dept_no) {
+		Optional<Departments> optional = repository.findById(dept_no);
+		Departments department = null;
+		if (optional.isPresent()) {
+			department = optional.get();
+		} else {
+			throw new RuntimeException(" Department not found for dept_no :: " + dept_no);
+		}
+		return department;
+	}
+
+	public void deleteDepartmentById(String id) {
+		this.repository.deleteById(id);
+	}
+>>>>>>> 32b7cd6fdc4059dd91820783d695f7edeab8f093
 
 }
