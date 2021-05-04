@@ -22,11 +22,19 @@ public class DepartmentsController {
 		return service.saveDepartment(Department);
 	}
 
-//	@GetMapping("/Departments")
-//	public List<Departments> findAllDepartments() {
-//		return service.getDepartments();
-//	}
-	
+	@GetMapping("/showNewDeptForm")
+	public String showNewDeptForm(Model model) {
+		// create model attribute to bind form data
+		Departments department = new Departments();
+		model.addAttribute("department", department);
+		return "new_department";
+	}
+	@PostMapping("/saveDepartment")
+	public String saveDepartment(@ModelAttribute("department") Departments department) {
+		// save employee to database
+		service.saveDepartment(department);
+		return "redirect:/departments";
+	}
 
 	@GetMapping("/departments")
 	public String departments(Model model) {
@@ -34,9 +42,19 @@ public class DepartmentsController {
 
 		return "departments";
 	}
-	@GetMapping("/searchDept/{id}")
-	public List<Departments> findDeptById(@PathVariable String id) {
-		return service.listAll(id);
-	}
+	
+	
+	@RequestMapping("/DepartmentSearch")
+    public String viewHomePage(Model model, @Param("keyword") String keyword) {
+        List<Departments> listDepartments = service.listAll(keyword);
+        model.addAttribute("listProducts", listDepartments);
+        model.addAttribute("keyword", keyword);
+         
+        return "departments";
+    }
+//	@GetMapping("/searchDept/{id}")
+//	public List<Departments> findDeptById(@PathVariable String id) {
+//		return service.listAll(id);
+//	}
 
 }

@@ -27,10 +27,6 @@ public class EmployeeService {
 		return repository.findAll();
 	}
 
-//    public List<Employee> saveProducts(List<Employee> emp) {
-//        return repository.saveAll(emp);
-//    }
-
 //	public List<Employees> listAll(String keyword) {
 //		if (keyword != null) {
 //			return repository.search(keyword);

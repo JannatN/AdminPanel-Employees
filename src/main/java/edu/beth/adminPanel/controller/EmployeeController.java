@@ -23,6 +23,22 @@ public class EmployeeController {
 		return service.saveEmployee(employee);
 	}
 	
+	@GetMapping("/showNewEmpForm")
+	public String showNewEmpForm(Model model) {
+		// create model attribute to bind form data
+		Employees employee = new Employees();
+		model.addAttribute("employee", employee);
+		return "new_employee";
+	}
+	
+	@PostMapping("/saveEmployee")
+	public String saveEmployee(@ModelAttribute("employee") Employees employee) {
+		// save employee to database
+		service.saveEmployee(employee);
+		return "redirect:/employees";
+	}
+	
+	
 	@GetMapping("/employees")
 	public String employees(Model model) {
 		model.addAttribute("employees", service.getEmployee());
