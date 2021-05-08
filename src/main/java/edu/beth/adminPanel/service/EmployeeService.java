@@ -29,11 +29,11 @@ public class EmployeeService {
 		return repository.findAll();
 	}
 
-	public List<Employee> listAll(String keyword) {
-		if (keyword != null) {
-			return repository.search(keyword);
-		}
-		return repository.findAll();
-	}
+//	public List<Employee> listAll(String keyword) {
+//		if (keyword != null) {
+//			return repository.search(keyword);
+//		}
+//		return repository.findAll();
+//	}
 
 }
