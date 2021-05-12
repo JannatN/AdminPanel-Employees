@@ -47,18 +47,6 @@ public class AppController {
 		return "register_success";
 	}
 
-<<<<<<< HEAD
-
-//	@GetMapping("departments")
-//	public String departments(Model model) {
-//		model.addAttribute("departments", service.getDepartments());
-//
-//		return "departments";
-//	}
-	
-
-=======
->>>>>>> 32b7cd6fdc4059dd91820783d695f7edeab8f093
 
 	@GetMapping("/users")
 	public String listUsers(Model model) {

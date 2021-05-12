@@ -35,7 +35,7 @@ public class DepartmentsController {
 		return "redirect:/departments";
 	}
 
-<<<<<<< HEAD
+
 	@GetMapping("/departments")
 	public String departments(Model model) {
 		model.addAttribute("departments", service.getDepartments());
@@ -56,12 +56,12 @@ public class DepartmentsController {
 //	public List<Departments> findDeptById(@PathVariable String id) {
 //		return service.listAll(id);
 //	}
-=======
+
 	@GetMapping("/searchDept/{id}")
 	public List<Departments> findDeptById(@PathVariable String id) {
 		return service.listAll(id);
 	}
->>>>>>> 32b7cd6fdc4059dd91820783d695f7edeab8f093
+
 
 	@GetMapping("/showFormForUpdate/{dept_no}")
 	public String showFormForUpdate(@PathVariable(value = "dept_no") String dept_no, Model model) {

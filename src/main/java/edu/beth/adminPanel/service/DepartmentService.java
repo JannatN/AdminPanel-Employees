@@ -28,11 +28,7 @@ public class DepartmentService {
 		}
 		return repository.findAll();
 	}
-<<<<<<< HEAD
-  
-	
-	
-=======
+
 
 	public Departments getDepartmentById(String dept_no) {
 		Optional<Departments> optional = repository.findById(dept_no);
@@ -48,6 +44,6 @@ public class DepartmentService {
 	public void deleteDepartmentById(String id) {
 		this.repository.deleteById(id);
 	}
->>>>>>> 32b7cd6fdc4059dd91820783d695f7edeab8f093
+
 
 }
