@@ -25,7 +25,6 @@ public class DepartmentsController {
 	@GetMapping("/departments")
 	public String departments(Model model) {
 		model.addAttribute("departments", service.getDepartments());
-
 		return "departments";
 	}
 
