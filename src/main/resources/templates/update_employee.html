@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="ISO-8859-1">
-	<title>Welcome to CodeJava Home</title>
+	<title>Update Employee</title>
 	<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
 	<script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
 	<script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
@@ -12,7 +12,7 @@
 </head>
 <style>
 	.btnUpdate {
-		background-color: #be706d;
+		background-color: #5c645c;
 		text-decoration: none;
 		font-size: 15px;
 		padding: 10px;
@@ -22,7 +22,7 @@
 	}
 
 	#nav {
-		background-color: #354864;
+		background-color: #3f5e3f;
 		color: white;
 		font-size: 35px;
 		padding: 10px;
@@ -53,11 +53,11 @@
 				<input type="number" th:field="*{emp_no}" placeholder="Employee Number "
 					class="form-control mb-4 col-4">
 
-				<input type="text" th:field="*{first_name}" placeholder="Employee First Name"
+				<input type="text" th:field="*{firstName}" placeholder="Employee First Name"
 					class="form-control mb-4 col-4">
                                 
 
-                                 <input type="text" th:field="*{last_name}" placeholder="Employee Last Name"
+                                 <input type="text" th:field="*{lastName}" placeholder="Employee Last Name"
 					class="form-control mb-4 col-4">
 
 
@@ -65,7 +65,7 @@
 					class="form-control mb-4 col-4">
 
 
-                                 <input type="date" th:field="*{hire_date}" placeholder="Employee Hire Date"
+                                 <input type="date" th:field="*{hireDate}" placeholder="Employee Hire Date"
 					class="form-control mb-4 col-4">
  
                                  <input type="date" th:field="*{birth_date}" placeholder="Employee Birth Date"

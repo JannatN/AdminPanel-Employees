@@ -1,5 +1,6 @@
 body{
-    background-color: rgb(218, 235, 248);
+    background-color: #9ed39e
+    ;
 }
 #background {
     width: 50%;
@@ -8,17 +9,18 @@ body{
 }
 
 .btns{
-    background-color: #354864;
+    background-color: #3e733f;
     width: 60%;
     margin-left: 20%;
     padding: 20px;
+    border: 2px solid black;
     
 }
 a{
       color: white;
 
 }
-a :hover{
-    background-color: rgb(60, 125, 168);
+a:hover{
+    background-color: #3e733f;
     color: white;
 }

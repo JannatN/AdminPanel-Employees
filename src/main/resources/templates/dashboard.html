@@ -10,7 +10,7 @@
       crossorigin="anonymous"
     />
     <link href="../public/css/style.css" th:href="@{css/style.css}" rel="stylesheet" />
-    <title>Admin DASHBOARD</title>
+    <title>Admin dashboard</title>
   </head>
   <body id="body">
     <div class="container">
@@ -59,7 +59,6 @@
              
               <div class="card_inner">
                 <h3><a th:href="@{/users}">Admins</a></h3>
-                <span class="font-bold text-title">2</span>
               </div>
             </div>
 
@@ -68,7 +67,6 @@
              
               <div class="card_inner">
                 <h3><a th:href="@{/employees}">Employees</a></h3>
-                <span class="font-bold text-title">5000</span>
               </div>
             </div>
 
@@ -79,7 +77,6 @@
               ></i>
               <div class="card_inner">
                 <h3><a th:href="@{/departments}">Departments</a></h3>
-                <span class="font-bold text-title">9</span>
               </div>
             </div>
 
@@ -90,7 +87,6 @@
               ></i>
               <div class="card_inner">
                 <p class="text-primary-p">Number of likes</p>
-                <span class="font-bold text-title">645</span>
               </div>
             </div>
           </div>
@@ -121,22 +117,22 @@
               <div class="charts__right__cards">
                 <div class="card1">
                   <h1>Income</h1>
-                  <p>$75,300</p>
+                  <!-- <p>$75,300</p> -->
                 </div>
 
                 <div class="card2">
                   <h1>Sales</h1>
-                  <p>$124,200</p>
+                  <!-- <p>$124,200</p> -->
                 </div>
 
                 <div class="card3">
                   <h1>Users</h1>
-                  <p>3900</p>
+                  <!-- <p>3900</p> -->
                 </div>
 
                 <div class="card4">
                   <h1>Orders</h1>
-                  <p>1881</p>
+                  <!-- <p>1881</p> -->
                 </div>
               </div>
             </div>
@@ -219,6 +215,6 @@
       </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-    <script src="../public/js/script.js" th:href="@{js/script.js}"></script>
+    <script type="text/javascript" th:src="@{../static/js/script.js}" />
   </body>
 </html>

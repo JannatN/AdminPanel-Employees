@@ -1,4 +1,6 @@
 package edu.beth.adminPanel.service;
+
+import edu.beth.adminPanel.entity.Departments;
 import edu.beth.adminPanel.entity.Employees;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,20 +24,23 @@ public class EmployeeService {
 	public List<Employees> getEmployee() {
 		return repository.findAll();
 	}
-	
-	public Employee getEmployeeById(Integer emp_no) {
-		Optional<Employee> optional = repository.findById(emp_no);
-		Employee employee = null;
+
+	public Employees getEmployeeById(Integer emp_no) {
+		Optional<Employees> optional = repository.findById(emp_no);
+		Employees employee = null;
 		if (optional.isPresent()) {
 			employee = optional.get();
 		} else {
 			throw new RuntimeException(" Employee not found for emp_no :: " + emp_no);
+		}
+		return employee;
+	}
 
 	public List<Employees> listAll(String keyword) {
 		if (keyword != null) {
 			return repository.findByFirstName(keyword);
 		}
-		return employee;
+		return repository.findAll();
 	}
 
 	public void deleteEmployeeById(Integer emp_no) {
@@ -76,6 +81,5 @@ public class EmployeeService {
 ////        existingProduct.setPrice(product.getPrice());
 ////        return repository.save(existingProduct);
 ////    }
-
 
 }

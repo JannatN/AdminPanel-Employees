@@ -22,7 +22,6 @@ public class DepartmentsController {
 		return service.saveDepartment(Department);
 	}
 
-
 	@GetMapping("/departments")
 	public String departments(Model model) {
 		model.addAttribute("departments", service.getDepartments());
@@ -42,23 +41,14 @@ public class DepartmentsController {
 		return "redirect:/departments";
 	}
 
-
-	@GetMapping("/departments")
-	public String departments(Model model) {
-		model.addAttribute("departments", service.getDepartments());
+	@RequestMapping("/DepartmentSearch")
+	public String viewHomePage(Model model, @Param("keyword") String keyword) {
+		List<Departments> listDepartments = service.listAll(keyword);
+		model.addAttribute("listProducts", listDepartments);
+		model.addAttribute("keyword", keyword);
 
 		return "departments";
 	}
-	
-	
-	@RequestMapping("/DepartmentSearch")
-    public String viewHomePage(Model model, @Param("keyword") String keyword) {
-        List<Departments> listDepartments = service.listAll(keyword);
-        model.addAttribute("listProducts", listDepartments);
-        model.addAttribute("keyword", keyword);
-         
-        return "departments";
-    }
 //	@GetMapping("/searchDept/{id}")
 //	public List<Departments> findDeptById(@PathVariable String id) {
 //		return service.listAll(id);
@@ -68,7 +58,6 @@ public class DepartmentsController {
 	public List<Departments> findDeptById(@PathVariable String id) {
 		return service.listAll(id);
 	}
-
 
 	@GetMapping("/showFormForUpdate/{dept_no}")
 	public String showFormForUpdate(@PathVariable(value = "dept_no") String dept_no, Model model) {
