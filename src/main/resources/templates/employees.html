@@ -12,6 +12,8 @@
 </head>
 
 <body>
+	<div id="nav">Welcome to Employee Section <img id="icon" src="../static/images/team.png" alt="icon"
+			th:src="@{images/team.png}"></div>
 
 	<div id="nav">Welcome to Employee Section <img id="icon" src="../static/images/team.png" alt="icon"
 			th:src="@{images/team.png}"></div>
@@ -24,52 +26,43 @@
 		&nbsp;
 		<input class="btns" type="button" value="Clear" id="btnClear" onclick="clearSearch()" />
 	</form>
+	<br /><br />
 
-	<br/><br/>
+	<div><a th:href="@{/showNewEmpForm}" class="addBtn"> Add Employee</a>
+		<div>
+			<h3>List Of Employees</h3>
+			<div>
+				<table class="table table-striped table-bordered">
+					<thead class="thead">
+						<tr>
+							<th>Employee no</th>
+							<th>Birth Date</th>
+							<th>First Name</th>
+							<th>Last Name</th>
+							<th>Gender</th>
+							<th>Hire Date</th>
 
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="employees: ${employees}">
+							<td th:text="${employees.emp_no}">Employee no</td>
+							<td th:text="${employees.birth_date}">Birth Date</td>
+							<td th:text="${employees.firstName}">First Name</td>
+							<td th:text="${employees.lastName}">Last Name</td>
+							<td th:text="${employees.gender}">Gender</td>
+							<td th:text="${employees.hireDate}">Hire Date</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
 
-       <div><a th:href = "@{/showNewEmpForm}" class="btn btn-primary btn-sm mb-3">  Add Employee</a> <div>
-			<h3> List Of Employees<h3>
-	<div>
-		<table class="table table-striped table-bordered">
-			<thead class="thead-dark">
-				<tr>
-					<th>emp_no</th>
-					<th>birth_date</th>
-                                        <th>first_name</th>
-					<th>last_name</th>
-                                        <th>gender</th>
-					<th>hire_date</th>
-                                        <th>Actions</th>
-					
-				</tr>
-			</thead>
-			<tbody>
-				<tr th:each="employees: ${employees}">
-					<td th:text="${employees.emp_no}">emp_no</td>
-					<td th:text="${employees.birth_date}">birth_date</td>
-                                        <td th:text="${employees.first_name}">first_name</td>
-					<td th:text="${employees.last_name}">last_name</td>
-                                        <td th:text="${employees.gender}">gender</td>
-					<td th:text="${employees.hire_date}">hire_date</td>
-
-                                        <td> <a th:href="@{/showFormForUpdateEmployee/{emp_no}(emp_no=${employees.emp_no})}" class="btn btn-primary">Update</a>
-					  <a th:href="@{/deleteEmployee/{emp_no}(emp_no=${employees.emp_no})}" class="btn btn-danger">Delete</a>
-					</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
-
-</form>
-<script type="text/javascript">
-	function clearSearch() {
-		window.location = "[[@{/employees}]]";
-	}
-</script>
-
-
-	
+			</form>
+			<script type="text/javascript">
+				function clearSearch() {
+					window.location = "[[@{/employees}]]";
+				}
+			</script>
 </body>
 
 </html>

@@ -42,6 +42,7 @@ public class AppController {
 //
 //		return "dashboard";
 //	}
+
 	// @GetMapping("/loginadmin")
 	// public String loginForm(Model model) {
 	// 	model.addAttribute("user", new User());
@@ -50,7 +51,6 @@ public class AppController {
 	// }
 	
 
-
 	@PostMapping("/process_register")
 	public String processRegister(User user) {
 		BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
@@ -58,8 +58,8 @@ public class AppController {
 		user.setPassword(encodedPassword);
 
 		userRepo.save(user);
-
 		return "redirect:/dashboard";
+
 	}
 
 

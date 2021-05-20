@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="ISO-8859-1">
-	<title>Welcome to Department Section</title>
+	<title>Departments</title>
 	<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
 	<script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
 	<script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
@@ -12,16 +12,11 @@
 </head>
 
 <body>
-
-         
-
-
 	<div id="nav">Welcome to Department Section <img id="icon" src="../static/images/team.png" alt="icon"
 			th:src="@{images/team.png}"></div>
 
 
 	<br /><br />
-
 	<form th:action="@{/searchDept}">
 		<span id="filter">Filter:</span> <input type="text" name="keyword" id="keyword" size="50" th:value="${keyword}"
 			required />
@@ -30,42 +25,6 @@
 		&nbsp;
 		<input class="btns" type="button" value="Clear" id="btnClear" onclick="clearSearch()" />
 	</form>
-
-	<br/><br/>
-
-
-
-	<div><a th:href = "@{/showNewDeptForm}" class="btn btn-primary btn-sm mb-3">  Add Department </a> <div>
-			<h3> List Of Departments<h3>
-	<div>
-		<table class="table table-striped table-bordered">
-			<thead class="thead-dark">
-				<tr>
-					<th>Department Number</th>
-					<th>Department Name</th>
-					<th>Actions</th>
-					
-				</tr>
-			</thead>
-			<tbody>
-				<tr th:each="departments: ${departments}">
-					<td th:text="${departments.dept_no}">Department Num</td>
-					<td th:text="${departments.dept_name}">Department Name</td>
-					<td> <a th:href="@{/showFormForUpdate/{dept_no}(dept_no=${departments.dept_no})}" class="btn btn-primary">Update</a>
-					  <a th:href="@{/deleteEmployee/{dept_no}(dept_no=${departments.dept_no})}" class="btn btn-danger">Delete</a>
-					</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
-
-</form>
-<script type="text/javascript">
-	function clearSearch() {
-		window.location = "[[@{/departments}]]";
-	}
-</script>
-
 
 	<br /><br />
 	<div><a th:href="@{/showNewDeptForm}" class="addBtn "> Add Department </a>
@@ -89,7 +48,7 @@
 							<td th:text="${departments.dept_name}">Department Name</td>
 							<td> <a th:href="@{/showFormForUpdate/{dept_no}(dept_no=${departments.dept_no})}"
 									class="btnUpdate">Update</a>
-								<a th:href="@{/deleteEmployee/{dept_no}(dept_no=${departments.dept_no})}"
+								<a th:href="@{/deleteDepartment/{dept_no}(dept_no=${departments.dept_no})}"
 									class="btnDelete">Delete</a>
 							</td>
 						</tr>
@@ -103,7 +62,6 @@
 					window.location = "[[@{/departments}]]";
 				}
 			</script>
-
 
 </body>
 

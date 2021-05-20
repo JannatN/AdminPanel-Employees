@@ -1,16 +1,8 @@
 package edu.beth.adminPanel.service;
-
-import edu.beth.adminPanel.entity.Departments;
-import edu.beth.adminPanel.entity.Employee;
-
+import edu.beth.adminPanel.entity.Employees;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.ui.Model;
-
-import edu.beth.adminPanel.repository.DepartmentRepository;
 import edu.beth.adminPanel.repository.EmployeeRepository;
-
-import org.springframework.jdbc.core.JdbcTemplate;
 import java.util.List;
 import java.util.Optional;
 
@@ -23,11 +15,11 @@ public class EmployeeService {
 	@Autowired
 	private EmployeeRepository repository;
 
-	public Employee saveEmployee(Employee employee) {
+	public Employees saveEmployee(Employees employee) {
 		return repository.save(employee);
 	}
 
-	public List<Employee> getEmployee() {
+	public List<Employees> getEmployee() {
 		return repository.findAll();
 	}
 	
@@ -38,6 +30,10 @@ public class EmployeeService {
 			employee = optional.get();
 		} else {
 			throw new RuntimeException(" Employee not found for emp_no :: " + emp_no);
+
+	public List<Employees> listAll(String keyword) {
+		if (keyword != null) {
+			return repository.findByFirstName(keyword);
 		}
 		return employee;
 	}

@@ -22,6 +22,13 @@ public class DepartmentsController {
 		return service.saveDepartment(Department);
 	}
 
+
+	@GetMapping("/departments")
+	public String departments(Model model) {
+		model.addAttribute("departments", service.getDepartments());
+		return "departments";
+	}
+
 	@GetMapping("/showNewDeptForm")
 	public String showNewDeptForm(Model model) {
 		Departments department = new Departments();
