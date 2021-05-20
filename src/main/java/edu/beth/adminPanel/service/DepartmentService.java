@@ -41,8 +41,8 @@ public class DepartmentService {
 		return department;
 	}
 
-	public void deleteDepartmentById(String id) {
-		this.repository.deleteById(id);
+	public void deleteDepartmentById(String dept_no) {
+		this.repository.deleteById(dept_no);
 	}
 
 

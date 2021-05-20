@@ -35,6 +35,12 @@ public class AppController {
 
 		return "signup_form";
 	}
+	// @GetMapping("/loginadmin")
+	// public String loginForm(Model model) {
+	// 	model.addAttribute("user", new User());
+
+	// 	return "loginadmin";
+	// }
 
 	@PostMapping("/process_register")
 	public String processRegister(User user) {
@@ -44,7 +50,7 @@ public class AppController {
 
 		userRepo.save(user);
 
-		return "register_success";
+		return "redirect:/dashboard";
 	}
 
 

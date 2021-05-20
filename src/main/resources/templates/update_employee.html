@@ -41,29 +41,45 @@
 </style>
 
 <body>
-		<div id="nav">Department Management System</h1>
+		<div id="nav">Employee Management System</h1>
 		</div>
 		<hr>
 		<div class="container">
 
 		<div id="form">
-			<h2>Update Department</h2>
-			<form action="#" th:action="@{/saveDepartment}" th:object="${department}" method="POST">
+			<h2>Update Employee</h2>
+			<form action="#" th:action="@{/saveEmployee}" th:object="${employee}" method="POST">
 
-				<input type="text" th:field="*{dept_no}" placeholder="Department Number "
+				<input type="number" th:field="*{emp_no}" placeholder="Employee Number "
 					class="form-control mb-4 col-4">
 
-				<input type="text" th:field="*{dept_name}" placeholder="Department Name"
+				<input type="text" th:field="*{first_name}" placeholder="Employee First Name"
+					class="form-control mb-4 col-4">
+                                
+
+                                 <input type="text" th:field="*{last_name}" placeholder="Employee Last Name"
 					class="form-control mb-4 col-4">
 
 
-				<button type="submit" class="btnUpdate"> Update Department</button>
+                                <input type="text" th:field="*{gender}" placeholder="Employee Gender"
+					class="form-control mb-4 col-4">
+
+
+                                 <input type="date" th:field="*{hire_date}" placeholder="Employee Hire Date"
+					class="form-control mb-4 col-4">
+ 
+                                 <input type="date" th:field="*{birth_date}" placeholder="Employee Birth Date"
+					class="form-control mb-4 col-4">
+
+
+
+				<button type="submit" class="btnUpdate"> Update Employee</button>
 			</form>
 		</div>
 
 		<hr>
 
-		<a th:href="@{/departments}"> Back to Department List</a>
+		<a th:href="@{/employees}"> Back to Employee List</a>
 	</div>
 </body>
 

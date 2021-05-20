@@ -1,27 +1,33 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
 	<meta charset="ISO-8859-1">
 	<title>Welcome to CodeJava Home</title>
 	<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
 	<script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
 	<script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+	<link href="../public/css/sections.css" th:href="@{css/sections.css}" rel="stylesheet" />
+
 </head>
+
 <body>
-<<<<<<< HEAD
-=======
 
-	<br/><br/>
+	<div id="nav">Welcome to Employee Section <img id="icon" src="../static/images/team.png" alt="icon"
+			th:src="@{images/team.png}"></div>
+
+	<br /><br />
 	<form th:action="@{/searchEmp}">
-		Filter: <input type="text" name="keyword" id="keyword" size="50" th:value="${keyword}" required />
+		<span id="filter">Filter:</span> <input type="text" name="keyword" id="keyword" size="50" th:value="${keyword}"
+			required /> &nbsp;
+		<input class="btns" type="submit" value="Search" />
 		&nbsp;
-		<input type="submit" value="Search" />
-		&nbsp;
-		<input type="button" value="Clear" id="btnClear" onclick="clearSearch()" />
+		<input class="btns" type="button" value="Clear" id="btnClear" onclick="clearSearch()" />
 	</form>
+
 	<br/><br/>
 
->>>>>>> 32b7cd6fdc4059dd91820783d695f7edeab8f093
+
        <div><a th:href = "@{/showNewEmpForm}" class="btn btn-primary btn-sm mb-3">  Add Employee</a> <div>
 			<h3> List Of Employees<h3>
 	<div>
@@ -34,6 +40,7 @@
 					<th>last_name</th>
                                         <th>gender</th>
 					<th>hire_date</th>
+                                        <th>Actions</th>
 					
 				</tr>
 			</thead>
@@ -45,6 +52,10 @@
 					<td th:text="${employees.last_name}">last_name</td>
                                         <td th:text="${employees.gender}">gender</td>
 					<td th:text="${employees.hire_date}">hire_date</td>
+
+                                        <td> <a th:href="@{/showFormForUpdateEmployee/{emp_no}(emp_no=${employees.emp_no})}" class="btn btn-primary">Update</a>
+					  <a th:href="@{/deleteEmployee/{emp_no}(emp_no=${employees.emp_no})}" class="btn btn-danger">Delete</a>
+					</td>
 				</tr>
 			</tbody>
 		</table>
@@ -56,5 +67,9 @@
 		window.location = "[[@{/employees}]]";
 	}
 </script>
+
+
+	
 </body>
+
 </html>

@@ -12,6 +12,8 @@ import edu.beth.adminPanel.repository.EmployeeRepository;
 
 import org.springframework.jdbc.core.JdbcTemplate;
 import java.util.List;
+import java.util.Optional;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
@@ -27,6 +29,21 @@ public class EmployeeService {
 
 	public List<Employee> getEmployee() {
 		return repository.findAll();
+	}
+	
+	public Employee getEmployeeById(Integer emp_no) {
+		Optional<Employee> optional = repository.findById(emp_no);
+		Employee employee = null;
+		if (optional.isPresent()) {
+			employee = optional.get();
+		} else {
+			throw new RuntimeException(" Employee not found for emp_no :: " + emp_no);
+		}
+		return employee;
+	}
+
+	public void deleteEmployeeById(Integer emp_no) {
+		this.repository.deleteById(emp_no);
 	}
 
 //	public List<Employee> listAll(String keyword) {
@@ -63,5 +80,6 @@ public class EmployeeService {
 ////        existingProduct.setPrice(product.getPrice());
 ////        return repository.save(existingProduct);
 ////    }
+
 
 }
