@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="ISO-8859-1">
-	<title>Welcome to Department Section</title>
+	<title>Departments</title>
 	<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
 	<script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
 	<script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
@@ -25,6 +25,7 @@
 		&nbsp;
 		<input class="btns" type="button" value="Clear" id="btnClear" onclick="clearSearch()" />
 	</form>
+
 	<br /><br />
 	<div><a th:href="@{/showNewDeptForm}" class="addBtn "> Add Department </a>
 		<div>
@@ -47,7 +48,7 @@
 							<td th:text="${departments.dept_name}">Department Name</td>
 							<td> <a th:href="@{/showFormForUpdate/{dept_no}(dept_no=${departments.dept_no})}"
 									class="btnUpdate">Update</a>
-								<a th:href="@{/deleteEmployee/{dept_no}(dept_no=${departments.dept_no})}"
+								<a th:href="@{/deleteDepartment/{dept_no}(dept_no=${departments.dept_no})}"
 									class="btnDelete">Delete</a>
 							</td>
 						</tr>

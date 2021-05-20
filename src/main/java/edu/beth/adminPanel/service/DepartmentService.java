@@ -29,6 +29,7 @@ public class DepartmentService {
 		return repository.findAll();
 	}
 
+
 	public Departments getDepartmentById(String dept_no) {
 		Optional<Departments> optional = repository.findById(dept_no);
 		Departments department = null;
@@ -43,5 +44,6 @@ public class DepartmentService {
 	public void deleteDepartmentById(String dept_no) {
 		this.repository.deleteById(dept_no);
 	}
+
 
 }

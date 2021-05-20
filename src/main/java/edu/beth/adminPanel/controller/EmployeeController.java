@@ -21,6 +21,17 @@ public class EmployeeController {
 		return service.saveEmployee(employee);
 	}
 
+//	
+//	@GetMapping("/showNewEmpForm")
+//	public String showNewEmpForm(Model model) {
+//		// create model attribute to bind form data
+//		Employees employee = new Employees();
+//		model.addAttribute("employee", employee);
+//		return "new_employee";
+//	}
+//	
+	
+
 	@GetMapping("/showNewEmpForm")
 	public String showNewEmpForm(Model model) {
 		// create model attribute to bind form data
@@ -42,7 +53,21 @@ public class EmployeeController {
 
 		return "employees";
 	}
+	
+	@GetMapping("/showFormForUpdateEmployee/{emp_no}")
+	public String showFormForUpdateEmployee(@PathVariable(value = "emp_no") Integer emp_no, Model model) {
+		Employee employee = service.getEmployeeById(emp_no);
+		model.addAttribute("employee", employee);
+		return "update_employee";
+	}
 
+	@GetMapping("/deleteEmployee/{emp_no}")
+	public String deleteEmployee(@PathVariable(value = "emp_no") Integer emp_no) {
+
+		// call delete employee method
+		this.service.deleteEmployeeById(emp_no);
+		return "redirect:/employees";
+}
 	@RequestMapping("/searchEmp")
 	public String searchEmployee(Model model, @Param("keyword") String keyword) {
 	List<Employees> listOfEmps = service.listAll(keyword);
@@ -56,5 +81,7 @@ public class EmployeeController {
 	// 	return service.listAll(keyword);
 
 	// }
+
+
 
 }
