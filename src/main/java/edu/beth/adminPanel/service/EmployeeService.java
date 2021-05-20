@@ -47,39 +47,5 @@ public class EmployeeService {
 		this.repository.deleteById(emp_no);
 	}
 
-//	public List<Employee> listAll(String keyword) {
-//		if (keyword != null) {
-//			return repository.search(keyword);
-//		}
-//		return repository.findAll();
-//	}
-
-//	public List<Employees> listAll(String keyword) {
-//		if (keyword != null) {
-//			return repository.search(keyword);
-//		}
-//		return repository.findAll();
-//	}
-
-//    public Product getProductById(int id) {
-//        return repository.findById(id).orElse(null);
-//    }
-//
-//    public Product getProductByName(String name) {
-//        return repository.findByName(name);
-//    }
-//
-//    public String deleteProduct(int id) {
-//        repository.deleteById(id);
-//        return "product removed !! " + id;
-//    }
-//
-////    public Product updateProduct(Product product) {
-////        Product existingProduct = repository.findById(product.getId()).orElse(null);
-////        existingProduct.setName(product.getName());
-////        existingProduct.setQuantity(product.getQuantity());
-////        existingProduct.setPrice(product.getPrice());
-////        return repository.save(existingProduct);
-////    }
 
 }
