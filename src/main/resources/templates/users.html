@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="ISO-8859-1">
-	<title>List Users</title>
+	<title>List Admins</title>
 	<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
 	<script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
 	<script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
@@ -17,8 +17,10 @@
 	<div>
 		<form th:action="@{/logout}" method="post">
 
-			<button class="btns" type="submit">Sign Out</button>
+			<button class="btns" type="submit">Sign Out</button> 
 		</form>
+		<br>
+		<a class="btns" th:href="@{/dashboard}">Dashboard</a>
 	</div>
 	<div class="container text-center">
 

@@ -36,12 +36,11 @@ public class AppController {
 		return "signup_form";
 	}
 	
-//	@GetMapping("/login")
-//	public String showLogin(Model model) {
+	@GetMapping("/login")
+	public String login(Model model) {
 //		model.addAttribute("user", new User());
-//
-//		return "dashboard";
-//	}
+		return "redirect:/dashboard";
+	}
 
 	// @GetMapping("/loginadmin")
 	// public String loginForm(Model model) {
