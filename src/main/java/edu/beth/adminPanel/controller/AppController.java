@@ -35,12 +35,21 @@ public class AppController {
 
 		return "signup_form";
 	}
+	
+//	@GetMapping("/login")
+//	public String showLogin(Model model) {
+//		model.addAttribute("user", new User());
+//
+//		return "dashboard";
+//	}
 	// @GetMapping("/loginadmin")
 	// public String loginForm(Model model) {
 	// 	model.addAttribute("user", new User());
 
 	// 	return "loginadmin";
 	// }
+	
+
 
 	@PostMapping("/process_register")
 	public String processRegister(User user) {
