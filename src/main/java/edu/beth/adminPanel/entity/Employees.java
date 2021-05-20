@@ -6,6 +6,8 @@ import lombok.NoArgsConstructor;
 import java.sql.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Data
@@ -14,6 +16,7 @@ import javax.persistence.Id;
 @Entity
 public class Employees {
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int emp_no;
 	@Column(name = "firstName")
 	private String firstName;
