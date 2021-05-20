@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
 	<meta charset="ISO-8859-1">
 	<title>Welcome to CodeJava Home</title>
@@ -7,37 +8,71 @@
 	<script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
 	<script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 </head>
+
 <body>
+	<style>
+		.btnUpdate {
+			background-color: #be706d;
+			text-decoration: none;
+			font-size: 15px;
+			padding: 10px;
+			border-radius: 10px;
+			margin: 10px;
+			color: white;
+		}
+
+		#nav {
+			background-color: #354864;
+			color: white;
+			font-size: 35px;
+			padding: 10px;
+			font-weight: bold;
+			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+		}
+
+		body {
+			background-color: rgb(255, 255, 255);
+			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+		}
+
+		#form {
+			margin-left: 0%;
+		}
+	</style>
+
+	<div id="nav">Employee Management System</div>
+
 	<div class="container">
-		<h1>Employee Management System</h1>
 		<hr>
 		<h2>Save Employee</h2>
+		<div id="form">
+			<form action="#" th:action="@{/saveEmployee}" th:object="${employee}" method="POST">
+				<label>Employee Number</label>
+				<input type="number" th:field="*{emp_no}" placeholder="Employee Number "
+					class="form-control mb-4 col-4">
+				<label for="date">Employee birth date</label>
+				<input type="date" th:field="*{birth_date}" placeholder="Employee birth date"
+					class="form-control mb-4 col-4">
 
-		<form action="#" th:action="@{/saveEmployee}" th:object="${employee}"
-			method="POST">
-			<input type="number" th:field="*{emp_no}"
-				placeholder="Employee Number " class="form-control mb-4 col-4">
-				
-				<input type="date" th:field="*{birth_date}"
-				placeholder="Employee birth date" class="form-control mb-4 col-4">
-                                 
-                                
-				<input type="text" th:field="*{first_name}"
-				placeholder="Employee first name" class="form-control mb-4 col-4">
-                                 
-                                
-				<input type="text" th:field="*{last_name}"
-				placeholder="Employee last name" class="form-control mb-4 col-4">
+				<label>Employee First Name</label>
+				<input type="text" th:field="*{firstName}" placeholder="first name" class="form-control mb-4 col-4">
 
-                                <input type="text" th:field="*{gender}"
-				placeholder="Employee gender" class="form-control mb-4 col-4">
-                                 
-                                
-				<input type="date" th:field="*{hire_date}"
-				placeholder="Employee hire date" class="form-control mb-4 col-4">
-				
-				
-				<button type="submit" class="btn btn-info col-2"> Save Employee</button>
-		</form>
+				<label>Employee Last Name</label>
+
+				<input type="text" th:field="*{lastName}" placeholder="last name" class="form-control mb-4 col-4">
+				<label>Employee Gender</label>
+
+				<input type="text" th:field="*{gender}" placeholder="gender" class="form-control mb-4 col-4">
+
+				<label for="date">Employee hire date</label>
+				<input type="date" th:field="*{hireDate}" placeholder="Employee hire date"
+					class="form-control mb-4 col-4">
+
+
+				<button type="submit" class="btnUpdate"> Save Employee</button>
+			</form>
+		</div>
+
 </body>
+
 </html>

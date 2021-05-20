@@ -1,21 +1,31 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
 	<meta charset="ISO-8859-1">
 	<title>Welcome to CodeJava Home</title>
 	<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
 	<script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
 	<script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+	<link href="../public/css/index.css" th:href="@{css/index.css}" rel="stylesheet" />
+
 </head>
+
 <body>
+	<div> <img id="background" src="../static/images/background.png" alt="background" th:src="@{images/background.png}">
+	</div> <br>
 	<div class="container text-center">
-		<h1>Welcome to CodeJava.net</h1>
-		<h3><a th:href="@{/users}">List of Users</a></h3>
-		<h3><a th:href="@{/register}">Register</a></h3>
-		<h3><a th:href="@{/login}">Login</a></h3>
-		<h3><a th:href="@{/departments}">Show Departments</a></h3>
-                <h3><a th:href="@{/employees}">Show Employees</a></h3>
+		<!-- <h3><a th:href="@{/users}">List of Users</a></h3> -->
+		<div class="btns">
+			<h3><a th:href="@{/register}">Register</a></h3>
+		</div><br>
+		<div class="btns">
+			<h3><a th:href="@{/login}">Login</a></h3>
+		</div>
+		<!-- <h3><a th:href="@{/departments}">Show Departments</a></h3>
+		<h3><a th:href="@{/employees}">Show Employees</a></h3> -->
 	</div>
 
 </body>
+
 </html>

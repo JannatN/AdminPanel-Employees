@@ -1,0 +1,24 @@
+body{
+    background-color: rgb(218, 235, 248);
+}
+#background {
+    width: 50%;
+    height: 50%;
+    margin-left: 25%;
+}
+
+.btns{
+    background-color: #354864;
+    width: 60%;
+    margin-left: 20%;
+    padding: 20px;
+    
+}
+a{
+      color: white;
+
+}
+a :hover{
+    background-color: rgb(60, 125, 168);
+    color: white;
+}

@@ -1,0 +1,88 @@
+body {
+    background-color: rgb(255, 255, 255);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#nav {
+    background-color: #354864;
+    color: white;
+    font-size: 35px;
+    padding: 10px;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#keyword {
+    border-radius: 10px;
+    outline: none;
+}
+
+.btns {
+    background-color: #be706d;
+    text-decoration: none;
+    font-size: 15px;
+    padding: 5px;
+    border-radius: 10px;
+    color: white;
+}
+
+h3 {
+    margin: 10px;
+}
+
+#filter {
+    margin-left: 10px;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.thead {
+    background-color: #354864;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.table {
+    width: 100%;
+    font-size: 20px;
+}
+
+.addBtn {
+    margin-left: 85%;
+    background-color: #be706d;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+}
+
+.btnUpdate {
+    background-color: #be706d;
+    text-decoration: none;
+    font-size: 15px;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px;
+    color: white;
+}
+
+.btnDelete {
+    background-color: #d93746;
+    text-decoration: none;
+    font-size: 15px;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px;
+    color: white;
+}
+
+a:hover {
+    text-decoration: none;
+    outline: none;
+    color: white;
+}
+
+#icon {
+    margin-left: 50%;
+}
