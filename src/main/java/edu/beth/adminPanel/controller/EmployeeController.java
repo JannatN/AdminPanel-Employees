@@ -73,13 +73,6 @@ public class EmployeeController {
 		return "redirect:/employees";
 	}
 
-//	@RequestMapping("/searchEmp")
-//	public String searchEmployee(Model model, @Param("keyword") String keyword) {
-//		List<Employee> listOfEmps = service.listAll(keyword);
-//		model.addAttribute("employees", listOfEmps);
-//		model.addAttribute("keyword", keyword);
-//
-//		return "employees";
-//	}
+
 
 }
